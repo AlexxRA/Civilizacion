@@ -6,5 +6,6 @@ using namespace std;
 int main()
 {
     MenuCivilizacion m;
+    //Perfecto
     return 0;
 }
