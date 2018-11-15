@@ -7,10 +7,14 @@ SOURCES += main.cpp \
     aldeano.cpp \
     civilizacion.cpp \
     menualdeanos.cpp \
-    menucivilizacion.cpp
+    menucivilizacion.cpp \
+    guerrero.cpp \
+    barco.cpp
 
 HEADERS += \
     aldeano.h \
     civilizacion.h \
     menualdeanos.h \
-    menucivilizacion.h
+    menucivilizacion.h \
+    guerrero.h \
+    barco.h

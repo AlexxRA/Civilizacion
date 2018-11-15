@@ -22,20 +22,6 @@ public:
     void recuperar();
     void respaldar(list<Civilizacion> &listaCiv);
 
-//    Aldeano& operator[](int i){
-//        for(auto it=civ.begin(); it!=civ.end(); it++){
-//            Civilizacion &c=*it;
-//            Aldeano &a = c.aldeanos[i];
-//            return a;
-//        }
-//    }
-//    Civilizacion& operator[](int i){
-//        for(auto it=civ.begin(); it!=civ.end(); it++){
-//            Civilizacion&c = *it;
-//            return c.aldeanos[i];
-//        }
-
-//    }
 };
 
 #endif // MENUCIVILIZACION_H
