@@ -60,18 +60,18 @@ string Guerrero::getTipoGuerrero() const
     return g;
 }
 
-void Guerrero::setTipoGuerrero(string value)
+void Guerrero::setTipoGuerrero(int value)
 {
-    if (value == "lancero") {
+    if (value == 1) {
         guerrero = tipoGuerrero::lancero;
     }
-    else if (value == "arquero" ) {
+    else if (value == 2 ) {
         guerrero = tipoGuerrero::arquero;
     }
-    else if (value == "paladín") {
+    else if (value == 3) {
         guerrero = tipoGuerrero::paladin;
     }
-    else if (value == "tanque") {
+    else if (value == 4) {
         guerrero = tipoGuerrero::tanque;
     }
 }

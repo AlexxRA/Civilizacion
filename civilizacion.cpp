@@ -1,6 +1,7 @@
 #include "civilizacion.h"
 #include<iostream>
 #include <iomanip>
+#include "menuguerreros.h"
 using namespace std;
 
 string Civilizacion::getNombre() const
@@ -68,11 +69,23 @@ void Civilizacion::mostrarBarcos()
 
 void Civilizacion::eliminarBarco(int id)
 {
+    puerto.remove_if([id](Barco *b){return b->getId()==id;delete(b);});
+}
 
+void Civilizacion::eliminarBarco(float comb)
+{
+    puerto.remove_if([comb](Barco *b){return b->getCombustible()<comb;delete(b);});
 }
 
 void Civilizacion::buscarBarco(int id)
 {
+    for (auto &it : puerto) {
+        if (it->getId() == id) {
+            MenuGuerreros m(it);
+            return;
+        }
+    }
+    cout << "No existe el barco..." << endl;
 
 }
 

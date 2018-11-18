@@ -28,7 +28,7 @@ public:
     void setEscudo(float value);
 
     string getTipoGuerrero() const;
-    void setTipoGuerrero(string value);
+    void setTipoGuerrero(int value);
 };
 
 #endif // GUERRERO_H

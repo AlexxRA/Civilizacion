@@ -40,6 +40,7 @@ class Civilizacion
         void agregarBarco(Barco *b);
         void mostrarBarcos();
         void eliminarBarco(int id);
+        void eliminarBarco(float comb);
         void buscarBarco(int id);
 
 

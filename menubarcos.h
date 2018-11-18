@@ -13,7 +13,6 @@ private:
 public:
     MenuBarcos(Civilizacion &m);
     void agregar(Civilizacion &c);
-    void mostrar();
     void eliminar();
     void buscar();
 };
