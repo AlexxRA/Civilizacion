@@ -2,6 +2,8 @@
 #define GUERRERO_H
 #include <iostream>
 using namespace std;
+enum class tipoGuerrero{lancero=1,arquero=2,paladin=3,tanque=4};
+
 
 class Guerrero
 {
@@ -10,7 +12,7 @@ private:
     int salud;
     float fuerza;
     float escudo;
-    enum tipoGuerrero{lancero=1,arquero=2,paladin=3,tanque=4};
+    tipoGuerrero guerrero;
 
 public:
     Guerrero();
@@ -25,7 +27,7 @@ public:
     float getEscudo() const;
     void setEscudo(float value);
 
-    string getTipoGuerrero(int value) const;
+    string getTipoGuerrero() const;
     void setTipoGuerrero(string value);
 };
 

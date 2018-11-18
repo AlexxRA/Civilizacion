@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <iostream>
 #include "aldeano.h"
+#include <list>
+#include "barco.h"
 
 class Civilizacion
 {
@@ -33,6 +35,14 @@ class Civilizacion
         double getSaludPromedio();
 
         Aldeano getAldeano(int i);
+
+        list<Barco*> puerto;
+        void agregarBarco(Barco *b);
+        void mostrarBarcos();
+        void eliminarBarco(int id);
+        void buscarBarco(int id);
+
+
 
 
 

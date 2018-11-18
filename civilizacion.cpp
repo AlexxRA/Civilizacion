@@ -1,4 +1,7 @@
 #include "civilizacion.h"
+#include<iostream>
+#include <iomanip>
+using namespace std;
 
 string Civilizacion::getNombre() const
 {
@@ -33,6 +36,44 @@ double Civilizacion::getSaludPromedio()
 Aldeano Civilizacion::getAldeano(int i)
 {
     return aldeanos[i];
+}
+
+void Civilizacion::agregarBarco(Barco *b)
+{
+    puerto.push_back(b);
+}
+
+void Civilizacion::mostrarBarcos()
+{
+    if (puerto.size() == 0) {
+        cout << "Tu civilizacion no tiene barcos." << endl;
+
+    }
+    else{
+        cout << setw(5) << "ID|" <<
+                setw(10) << "Combustible|" <<
+                setw(10) << "Velocidad|" <<
+                setw(10) << "Armadura|" <<
+                setw(10) << "Cantidad de guerreros" << endl;
+        for(auto it = puerto.begin(); it != puerto.end(); it++){
+            Barco *b =*it;
+            cout<<setw(5)<<b->getId()<<
+                  setw(10)<<b->getCombustible()<<
+                  setw(10)<<b->getVelocidad()<<
+                  setw(10)<<b->getArmadura()<<
+                  setw(10)<<b->getGuerreros()<<endl;
+        }
+    }
+}
+
+void Civilizacion::eliminarBarco(int id)
+{
+
+}
+
+void Civilizacion::buscarBarco(int id)
+{
+
 }
 
 Civilizacion::Civilizacion()

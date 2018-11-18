@@ -28,6 +28,7 @@ public:
     void agregarGuerrero(Guerrero &g);
     void eliminarGuerrero();
     Guerrero topeGuerreros();
+    int getGuerreros();
 };
 
 #endif // BARCO_H

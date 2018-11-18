@@ -40,31 +40,40 @@ void Guerrero::setEscudo(float value)
     escudo = value;
 }
 
-string Guerrero::getTipoGuerrero(int value) const
+string Guerrero::getTipoGuerrero() const
 {
-//    tipoGuerrero tipo =value;
-//    switch (value) {
-//    case 1:
-//        return "lancero";
-//        break;
-//    case 2:
-//        return "arquero";
-//        break;
-//    case 3:
-//        return "paladin";
-//        break;
-//    case 4:
-//        return "tanque";
-//        break;
-//    default:
-//        return "lancero";
-//        break;
-//    }
+    tipoGuerrero tipo = guerrero;
+    string g;
+    if (tipo == tipoGuerrero::lancero) {
+        g =  "lancero";
+    }
+    else if (tipo == tipoGuerrero::arquero) {
+        g = "arquero";
+    }
+    else if (tipo == tipoGuerrero::paladin) {
+        g = "paladín";
+    }
+    else if (tipo == tipoGuerrero::tanque) {
+        g = "tanque";
+    }
+
+    return g;
 }
 
 void Guerrero::setTipoGuerrero(string value)
 {
-
+    if (value == "lancero") {
+        guerrero = tipoGuerrero::lancero;
+    }
+    else if (value == "arquero" ) {
+        guerrero = tipoGuerrero::arquero;
+    }
+    else if (value == "paladín") {
+        guerrero = tipoGuerrero::paladin;
+    }
+    else if (value == "tanque") {
+        guerrero = tipoGuerrero::tanque;
+    }
 }
 
 Guerrero::Guerrero()

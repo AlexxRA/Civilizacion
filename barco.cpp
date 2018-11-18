@@ -61,6 +61,11 @@ Guerrero Barco::topeGuerreros()
     return pilaGuerreros.top();
 }
 
+int Barco::getGuerreros()
+{
+    return pilaGuerreros.size();
+}
+
 Barco::Barco()
 {
 

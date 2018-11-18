@@ -6,6 +6,7 @@
 #include <list>
 #include <algorithm>
 #include <iomanip>
+#include "menubarcos.h"
 
 
 Civilizacion MenuCivilizacion::nuevaCivilizacion()
@@ -108,16 +109,38 @@ void MenuCivilizacion::agregar()
 void MenuCivilizacion::buscar()
 {
     string s;
+    int o;
     cout << "Nombre de la civilizacion: ";
     getline(cin, s);
 
-    for (auto &it : civ) {
-        if (it.getNombre() == s) {
-            MenuAldeanos m(it);
-            return;
+    cout<<"1.- Aldeanos:"<<endl;
+    cout<<"2.- Barcos:"<<endl;
+    cin>>o;
+    switch (o) {
+    case 1:
+        for (auto &it : civ) {
+            if (it.getNombre() == s) {
+                MenuAldeanos m(it);
+                return;
+            }
         }
+        cout << "No existe civilizacion..." << endl;
+        break;
+    case 2:
+        for (auto &it : civ) {
+            if (it.getNombre() == s) {
+                MenuBarcos m(it);
+                return;
+            }
+        }
+        cout << "No existe civilizacion..." << endl;
+
+        break;
+    default:
+        break;
     }
-    cout << "No existe civilizacion..." << endl;
+
+
 }
 
 void MenuCivilizacion::eliminar()
