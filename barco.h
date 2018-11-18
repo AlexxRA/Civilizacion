@@ -29,6 +29,8 @@ public:
     void eliminarGuerrero();
     Guerrero topeGuerreros();
     int getGuerreros();
+    stack<Guerrero> getPila();
+
 };
 
 #endif // BARCO_H

@@ -6,6 +6,7 @@ class MenuGuerreros
 {
 private:
     Barco *barco;
+    int id;
 public:
     MenuGuerreros(Barco *b);
     void agregar(Barco *b);

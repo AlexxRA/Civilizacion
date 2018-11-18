@@ -66,6 +66,11 @@ int Barco::getGuerreros()
     return pilaGuerreros.size();
 }
 
+stack<Guerrero> Barco::getPila()
+{
+    return pilaGuerreros;
+}
+
 Barco::Barco()
 {
 

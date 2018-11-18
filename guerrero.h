@@ -1,6 +1,7 @@
 #ifndef GUERRERO_H
 #define GUERRERO_H
 #include <iostream>
+#include <iomanip>
 using namespace std;
 enum class tipoGuerrero{lancero=1,arquero=2,paladin=3,tanque=4};
 
@@ -29,6 +30,17 @@ public:
 
     string getTipoGuerrero() const;
     void setTipoGuerrero(int value);
+
+    friend ostream& operator <<(ostream &o, const Guerrero &g){
+
+        o<<setw(5)<<g.getId()<<
+              setw(10)<<g.getSalud()<<
+              setw(10)<<g.getFuerza()<<
+              setw(10)<<g.getEscudo()<<
+              setw(10)<<g.getTipoGuerrero()<<endl;
+        return o;
+    }
+
 };
 
 #endif // GUERRERO_H

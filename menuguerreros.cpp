@@ -4,6 +4,7 @@
 MenuGuerreros::MenuGuerreros(Barco *b)
 {
     barco = b;
+    id=1;
     int opc;
     do{
         system("cls");
@@ -21,7 +22,7 @@ MenuGuerreros::MenuGuerreros(Barco *b)
             break;
         case 2:
             system("cls");
-
+            eliminar();
             system("pause");
             break;
         case 3:
@@ -31,7 +32,7 @@ MenuGuerreros::MenuGuerreros(Barco *b)
             break;
         case 4:
             system("cls");
-
+            mostrarTodos();
             system("pause");
             break;
 
@@ -46,9 +47,7 @@ void MenuGuerreros::agregar(Barco *b)
     int i;
     float f;
 
-    cout<<"ID: ";
-    cin>>i;
-    g.setId(i);
+    g.setId(id++);
 
     cout<<"Salud: ";
     cin>>i;
@@ -72,17 +71,27 @@ void MenuGuerreros::agregar(Barco *b)
 
 void MenuGuerreros::mostrarUltimo()
 {
-    Guerrero g = barco->topeGuerreros();
+    cout<<barco->topeGuerreros();
+
+}
+
+void MenuGuerreros::eliminar()
+{
+
+    barco->eliminarGuerrero();
+}
+
+void MenuGuerreros::mostrarTodos()
+{
+    stack<Guerrero> copia(barco->getPila());
     cout << setw(5) << "ID|" <<
             setw(10) << "Salud|" <<
             setw(10) << "Fuerza|" <<
             setw(10) << "Escudo|" <<
-            setw(20) << "Tipo|" << endl;
-
-    cout<<setw(5)<<g.getId()<<
-          setw(10)<<g.getSalud()<<
-          setw(10)<<g.getFuerza()<<
-          setw(10)<<g.getEscudo()<<
-          setw(10)<<g.getTipoGuerrero()<<endl;
-
+            setw(10) << "Tipo|" << endl;
+    while (!copia.empty()){
+        Guerrero g = copia.top();
+        cout<<g;
+        copia.pop();
+    }
 }
